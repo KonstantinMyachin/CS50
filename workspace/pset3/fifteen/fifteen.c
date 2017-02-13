@@ -53,7 +53,7 @@ int main(int argc, string argv[])
     d = atoi(argv[1]);
     if (d < DIM_MIN || d > DIM_MAX)
     {
-        printf("Доска должна быть между %i x %i and %i x %i, включительно.\n",
+        printf("Board must be between %i x %i and %i x %i, inclusive.\n",
             DIM_MIN, DIM_MIN, DIM_MAX, DIM_MAX);
         return 2;
     }
@@ -98,12 +98,12 @@ int main(int argc, string argv[])
         // check for win
         if (won())
         {
-            printf("Вы выиграли!\n");
+            printf("ftw!\n");
             break;
         }
 
         // prompt for move
-        printf("Сместить цифру: ");
+        printf("Tile to move: ");
         int tile = GetInt();
         
         // quit if user inputs 0 (for testing)
@@ -119,7 +119,7 @@ int main(int argc, string argv[])
         // move if possible, else report illegality
         if (!move(tile))
         {
-            printf("\nЭту цифру сместить нельзя.\n");
+            printf("\nIllegal move.\n");
             usleep(500000);
         }
 
@@ -149,7 +149,7 @@ void clear(void)
 void greet(void)
 {
     clear();
-    printf("ДОБРО ПОЖАЛОВАТЬ В ИГРУ ПЯТНАШКИ!\n");
+    printf("WELCOME TO GAME OF FIFTEEN\n");
     usleep(2000000);
 }
 
